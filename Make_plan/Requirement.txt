@@ -1,0 +1,69 @@
+1. What to Expect in SGD $3000 Remote MLOps Jobs
+Job Scope:
+
+    Junior-Level MLOps Tasks:
+        Deploying machine learning models using cloud platforms (AWS, Azure, GCP).
+        Maintaining CI/CD pipelines for model updates.
+        Monitoring and debugging ML workflows.
+        Collaborating with data scientists to optimize models.
+    Typical Tools/Skills:
+        Docker, Kubernetes, AWS SageMaker.
+        Python for scripting and automation.
+        Monitoring tools like CloudWatch, Prometheus, or Grafana.
+
+Why SGD $3000?
+
+    It's a starting point for MLOps roles, especially for those with:
+        Certifications like AWS Certified Machine Learning – Specialty.
+        A strong portfolio but limited professional experience.
+        Relevant academic background or a software engineering degree.
+
+2. How to Find Remote MLOps Jobs Paying SGD $3000
+Target Companies:
+
+    Startups:
+        Many startups offer remote opportunities for roles like MLOps Engineers at competitive salaries.
+    Global Firms with Regional Offices:
+        Large companies may hire remote junior engineers based on regional salary expectations.
+
+Platforms to Search:
+
+    LinkedIn:
+        Filter for remote MLOps roles and entry-level positions.
+        Use search terms like "Junior MLOps Engineer" or "Machine Learning Engineer Remote".
+
+    Remote Job Boards:
+        We Work Remotely, AngelList, Remote.co: Platforms with tech-focused remote job listings.
+
+    Freelance/Contract Platforms:
+        Upwork or Toptal for project-based MLOps work.
+
+3. Skills and Certifications to Secure SGD $3000 Role
+
+    Certifications:
+        AWS Certified Machine Learning – Specialty (in progress).
+        Additional certifications in Docker, Kubernetes, or DevOps tools can help.
+
+    Skills:
+        Strong foundational skills in cloud platforms (AWS Free Tier for practice).
+        Hands-on experience with CI/CD pipelines and containerization.
+        Building and deploying at least 2-3 real-world MLOps projects.
+
+    Portfolio:
+        Showcase end-to-end projects with clear documentation (GitHub/portfolio website).
+        Examples: A real-time ML pipeline, automated model retraining, or scalable deployment.
+
+4. How to Strengthen Your Profile
+
+    Focus on Practical Projects:
+        Build a real-time model deployment pipeline using AWS SageMaker.
+        Automate model training and deployment with Lambda or Step Functions.
+        Monitor workflows with CloudWatch or similar tools.
+
+    Networking:
+        Attend AWS events, webinars, or online meetups to connect with hiring managers.
+        Engage on LinkedIn by posting your projects and interacting with MLOps communities.
+
+    Apply Strategically:
+        Tailor your resume and cover letter to each job.
+        Highlight certifications, relevant projects, and any prior experience
