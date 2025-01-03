@@ -1,0 +1,11 @@
+Tối ưu hóa chỉnh tham số Bayesian Optimization
+Logic: Thay vì kết hợp tham số thì BO xây dựng mô hình xác xuất để tính hàm mục tiêu và hàm los, mô hình giúp dwj đoán tham số có thể tạo ra kết quả tốt nhất mà không cần phải thử tất cả các giá trị.
+Acquisition function: phuowg pháp này swr dụng hàm này để tìm kiếm các tham số tiếp theo cần thwr nghiemj, đo lường tối ưu và tìm giá trị tham số chưa thử
+Mỗi lần thwr, BO sẽ chọn tham số dựa trên mô hình xác suất, cập nhật mô hình xs và tiếp tục tối ưu hóa dễn mức mong muốn.
+Ưu điểm: tiết kiệm thời gian và tài nguyên, thích hợp với tham số lớn và đắt đỏ
+
+Bước sử dung: 
+1. thư viện hyperopt
+2. Xác định tham số của mô hình cần tối ưu hóa
+3. Định nghĩa hàm mục tieu (objective function), trong đó sẽ huấn luyện mô hình và trả về giá trị của hàm mất mát để tối ưu hóa
+4. Sử dụng hyperopt.fmin() để tìm kiếm tham số tốt nhất

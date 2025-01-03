@@ -1,0 +1,17 @@
+
+Ensemble learning: Kết hợp mô hình yếu
+- Bagging: Xây dựng lượng lớn các mô hình độc lập và song song, train và lấy trung bình 
+
+XGBoosting: là một thư viện học máy mạnh mẽ có tính toán hiệu quả và độ chính xác cao. Thư viện gradient boosting hiện đại giúp tăng tốc quá trình huấn luyện và tối ưu hóa mô hình học máy.
+Hoạt động: 
+Boosting: mỗi mô hình sau sẽ khắc phục lỗi của mô hình trước, giúp mô hình mạnh mẽ hơn. Giảm thiểu lỗi dự đoán của các mô hình yếu.
+Gradient Boosting: là một phương pháp tối ưu hóa gradient, nơi mỗi mô hình học một cách chính xác các sai số của mô hình trước đó.
+XGBoosting: tối ưu hóa quá trình huấn luận và cải thiện độ chinh xác
+- regularization: ngăn chặn overfitting
+- handling mising data: xử lý dữ liệu thiếu hiệu quả
+- Parallelization: sử dụng đa luồng, cho phép huấn luyện nhanh hơn truyền thống
+- Pruning: xây dựng khi đạt độ sâu, cắt tỉa cây pruning để tối ưu hóa cấu trúc và ngừng khi đạt tối đa
+Gradient Descent: tối ưu hóa một hàm mất mát loss function. tính toán gradient của hàm mất mát và điều chỉnh tham số làm giảm sai số 
+Huấn luyện phân tán distributed training
+Có thể tận dụng phần cứng để huấn luyện nhanh hơn
+

@@ -16,3 +16,5 @@ AWS Sage Maker: https://www.youtube.com/watch?v=q5obnSh1zH8&list=PLZ8LpvgeJKcjVJ
 - Tensorflow, PyTorch, Hugging Face
 - Tranfer learning
 
+Ô
+
