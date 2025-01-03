@@ -1,0 +1,9 @@
+MP là quá trình loại bỏ các trọng số nhỏ hoặc các phần không quan trọng tron mô hình học máy, giúp giảm kích thước và tăng tốc độ mô hình mà không giảm độ chính xác.
+
+Quá trình pruning giúp loại bỏ các kết nối không quan trọng trong mạng nơ ron twcs là các trọng số nhỏ gần bằng 0
+Khi thực hiện pruning bạn có thể lụa chọn việc loại bỏ các trọng số của lớp weight pruning hoặc toàn bộ các neuron pruning
+
+Giải thích code:
+Pruning: áp dụng pruning lên các trọng số mô hình, chọn phương pháp L1Unstructured loại bỏ các trọng số có giá trị nhỏ nhất
+Pruning Method: Loại bỏ các trọng số có giá trị nhỏ nhất theo L1 norm 
+Quá trình huấn luyện: Sau khi pruning mô hình vẫn có thể được huấn luyện và điều chỉnh lại các trọng số còn lại

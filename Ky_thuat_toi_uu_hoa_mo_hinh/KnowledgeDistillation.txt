@@ -1,0 +1,9 @@
+KD là quá trình học từ một mô hình lớn teacher model, truyền tải kiến thức của mô hình lớn sang một mô hình nhỏ hơn student model với mục tiêu làm giảm kích thước mô hình mà không giảm độ chính xác quá nhiều
+
+Code:
+Teacher: Resnet18
+Student: lớp đầu ra chỉ có 10 lớp
+Distillation Los: kết hợp Cross Entropy los và KL Divergence los. Giúp mô hình Student học được phân phối xác suất mềm twf mô hình Teacher.
+Training: Mô hình Student học twf dwj đoán của mô hình Teacher thay vì học từ dữ liệu gốc
+
+Mục tiêu là chuyển từ teacher model sang student model giúp mô hình có hiệu suất tương tự nhưng kích thước nhỏ hơn và tính toán nhanh hơn.
