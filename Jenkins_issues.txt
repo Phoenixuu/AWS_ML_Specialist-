@@ -1,0 +1,33 @@
+Building on the built-in node can be a security issue. You should set up distributed builds.
+
+Master node: là node chính của Jenkins, nơi quản lý tác vụ, lưu trữ cấu hình và các giữ liệu quan trọng. Nếu chạy các build trực tieps trên master node có thể tạo ra nguy cơ bảo mật.
+Distributed buils có nghĩa là thay vì chạy trên masternode thì sẽ sử dụng agent hoặc cloud. Điều này không chỉ giúp tăng tính bảo mật mà còn giúp phân tán tải và cải thiện hiệu suất của hệ thống.
+
+Thiết lập Agent (hoặc cloud)
+
+
+Theory:
+1. Definition:
+Jenkins là một công cụ tự động hóa mã nguồn mở, chủ yếu được sử dụng trong quy trình CI/CD (Continuous Integration/Continuous Delivery). Jenkins giúp tự động hóa các tác vụ như kiểm tra, xây dựng, triển khai và phân phối phần mềm. Điều này giúp tăng tốc quá trình phát triển phần mềm và giảm thiểu các lỗi do con người gây ra. Jenkins hỗ trợ nhiều plugin và có thể tích hợp với nhiều công cụ khác trong hệ sinh thái DevOps như Git, Docker, Kubernetes, Maven, và nhiều công cụ kiểm thử khác.
+
+2. plugin trong Jenkins
+Source Control Management (SCM) Plugin: Ví dụ: Git, SVN.
+Build Tools Plugins: Ví dụ: Maven, Gradle, Ant.
+Notification Plugins: Ví dụ: Email Extension, Slack Notification.
+Deployment Plugins: Ví dụ: Kubernetes, Docker.
+Test Reporting Plugins: Ví dụ: JUnit, TestNG.
+Monitoring Plugins: Ví dụ: Build Monitor Plugin, Metrics Plugin.
+Plugin giúp Jenkins tích hợp với nhiều công cụ khác nhau và tạo ra một quy trình tự động hóa linh hoạt, từ đó giảm thiểu thời gian và công sức trong việc phát triển phần mềm.
+
+3. CI/CD và Jenkins
+CI (Continuous Integration) và CD (Continuous Delivery/Continuous Deployment) là hai phương pháp trong DevOps giúp tối ưu hóa quy trình phát triển phần mềm. CI yêu cầu các nhà phát triển liên tục tích hợp mã nguồn vào kho chứa chung, sau đó Jenkins tự động kiểm tra, xây dựng và triển khai các ứng dụng. CD tiếp tục quá trình tự động hóa khi phần mềm được triển khai lên môi trường staging hoặc production. Jenkins hỗ trợ CI/CD bằng cách tự động hóa các bước kiểm tra, xây dựng, và triển khai ứng dụng khi mã nguồn thay đổi.
+
+4. Xử lý lỗi Jenkins
+Kiểm tra Log: Xem log từ Jenkins để xác định lỗi.
+Kiểm tra Môi Trường: Đảm bảo  môi trường như máy chủ, đường dẫn
+Kiểm tra Các Plugin: Đảm bảo rằng tất cả các plugin cần thiết
+Kiểm Tra Mã Nguồn: Kiểm tra mã nguồn trong repository 
+Chạy lại Build: Thử chạy lại build 
+
+5. Jenkins và Docker
+Docker có thể được tích hợp với Jenkins để chạy các build trong các container, giúp cô lập các môi trường và tối ưu hóa tài nguyên. Bạn có thể sử dụng Docker Plugin trong Jenkins để tạo container khi chạy build. Điều này giúp giảm thiểu xung đột môi trường và đảm bảo rằng các build luôn chạy trong một môi trường đồng nhất.
