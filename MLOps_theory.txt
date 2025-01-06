@@ -1,0 +1,47 @@
+Các giai đoạn triển khai MLOps
+
+1. Experimentation (Thử nghiệm và phát triển)
+Mục tiêu: Xây dựng và cải tiến mô hình ML thông qua các thí nghiệm và thử nghiệm
+Hoạt động:
+- Xử lý và khám phá dữ liệu
+- Tạo mô hình ML ban đầu (training models)
+- Tinh chỉnh hyperparameters và so kựết quả
+Công cụ: Jupyter Notebook, Tensorflow, PyTorch
+
+2. Model Development and Versioning (Phát triển và quản lý phiên bản mô hình)
+Mục tiêu: Quản lý các phiên bản của dữ liệu, mã nguồn và mô hình
+Hoạt động:
+- Theo dõi và quản lý dữ liệu (Data Versoning)
+- Theo dõi mã nguồn và thí nghiệm (Code & Experiment Tracking)
+- Quản lý phiên bản mô hình (Model versioning)
+Công cụ: MLflow, Git
+
+3. Continuous Integration and Testing (Tích hợp và kiểm thử liên tục)
+Mục tiêu: Đảm bảo mã nguồn và mô hình hoạt động ổn định qua các thay đổi
+Họat động:
+- Tích hợp mã nguồn vào pipeline CI/CD
+- Kiểm thử đơn vị (unitest) và kiểm thử tích hợp (Integration Testing)
+Công cụ: Jenkins, GitHub Actions
+
+4. Continous Deployment (Triển khai liên tục)
+Mục tiêu: Triển khai mô hình ML vào môi trường sản xuất một cách tự động, nhanh chóng
+Hoạt động:
+- Xây dựng container chưa mô hình (Docker)
+- Triển khai mô hình lên cloud hoặc on-premise(Kubernets, AWS SageMaker)
+- Tích hợp API để phục vụ dự đoán
+Công cụ: Docker, Kubernets, AWS Lambda
+
+5. Monitoring and Feedback (Giám sát và phản hồi)
+Mục tiêu: Đảm bảo mô hình hoạt động chính xác và liên tục cải tiến
+Hoạt động: 
+- Giám sát hiệu suất mô hình (Model Performing Monitoring)
+- Xử lý mô hình drift (Model Drift Detection)
+- Cập nhật lại mô hình khi có dữ liệu mới
+Công cụ: Prometheus, SagaMaker Monitor
+
+6. Automation and Scaling (Tự động hóa và mở rộng quy mô)
+Mục tiêu: Tối ưu hóa và tự động hóa toàn bộ pipeline MLOps, đồng thời mở rộng quy mô xử lý dữ liệu và dự đoán
+Hoạt động:
+- Tự động hóa pipeline từ dữ liệu đến triển khai
+- Xử lý song song (parallel processing) và phâ phối
+Công cụ: Apache Airflow, Kubeflow, AWS Step Functions.
