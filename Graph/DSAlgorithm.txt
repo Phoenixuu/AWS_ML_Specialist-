@@ -1,0 +1,14 @@
+Dijkstra | Krusal | Prim
+
+Dijkstra: Tìm đường đi ngắn nhất
+Krusal: Tìm cây khung nhỏ nhất
+Prim: Tìm cây khung nhỏ nhất
+
+D: Đồ thị trọng số dương
+K: Đồ thị liên thông, đồ thị thưa (cáp mạng tối ưu, trạm phát sóng)
+P: Đồ thị liên thông, đồ thị dày đặc (Thiết kết mạng điện, nơi có trọng số lớn)
+
+Độ phức tạp
+D: O((V+E)logV) với V là số đỉnh và E là số cạnh
+K: O(ElogE) (chủ yếu sắp xếp cạnh)
+P: O((V+E)logV) khi dùng heap
