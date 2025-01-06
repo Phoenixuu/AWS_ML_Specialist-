@@ -22,7 +22,7 @@ void primMST(const vector<vector<Edge>> &graph, int startVertex) {
     int n = graph.size(); // Số lượng đỉnh trong đồ thị
 
     // Mảng để đánh dấu các đỉnh đã được thêm vào cây khung nhỏ nhất
-    vector<bool> inMST(n, false);
+    vector<bool> visited(n, false);
 
     // Mảng lưu trọng số nhỏ nhất để kết nối mỗi đỉnh
     vector<int> minWeight(n, INT_MAX);
@@ -43,10 +43,10 @@ void primMST(const vector<vector<Edge>> &graph, int startVertex) {
         pq.pop();
 
         // Nếu đỉnh đã được xử lý, bỏ qua
-        if (inMST[u]) continue;
+        if (visited[u]) continue;
 
         // Đánh dấu đỉnh đã được thêm vào cây khung
-        inMST[u] = true;
+        visited[u] = true;
 
         // Duyệt qua các cạnh kề của đỉnh hiện tại
         for (const Edge &neighbor : graph[u]) {
@@ -54,7 +54,7 @@ void primMST(const vector<vector<Edge>> &graph, int startVertex) {
             int weight = neighbor.weight;
 
             // Nếu đỉnh `v` chưa nằm trong MST và trọng số nhỏ hơn trọng số hiện tại
-            if (!inMST[v] && weight < minWeight[v]) {
+            if (!visited[v] && weight < minWeight[v]) {
                 minWeight[v] = weight;
                 parent[v] = u;
                 pq.push({v, weight});
