@@ -1,0 +1,12 @@
+Jenkins Infrastructure
+1. Master Server: Controls Pipelines + Schedule Builds
+2. Agents/Minions: Perform the Build
+
+
+1. Commit triggers pipeline
+2. AGent selected based on Configured labels
+3. Agent runs build
+
+Agent Types:
+1 Pernament Agents: linux or windows
+
