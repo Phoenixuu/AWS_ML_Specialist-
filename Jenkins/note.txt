@@ -9,4 +9,5 @@ Jenkins Infrastructure
 
 Agent Types:
 1 Pernament Agents: linux or windows
+2 Cloud agents: Docker, Kurbetnets, AWS
 
