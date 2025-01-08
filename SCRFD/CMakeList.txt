@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.10)
+project(ModelFaceDetecion)
+set(CMAKE_CXX_STANDARD 14)
+
+find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
+
+find_package(ONNXRuntime REQUIRED)
+# find_package(TensorRT REQUIRED)
+
+add_executable(model_optimization main.cpp model.cpp)
+
+target_link_libraries(model_optimization PRIVATE Python3::Python)
+
+add_custom_target(run ALL
+    COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/main.py
+    DEPENDS model_optimization
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
+install(TARGETS model_optimization DESTINATION ${Python3_SITE_PACKAGES})
