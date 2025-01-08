@@ -15,6 +15,7 @@ import cv2
 import sys
 import torch
 import torch.nn.functional as F
+import torch.nn.utils.prune as prune
 # from core import session_options
 
 session_options = onnxruntime.SessionOptions()
@@ -359,6 +360,64 @@ def distillation_loss(student_logits, teacher_logits, true_labels, T = 2.0, alph
 
     #Intergrate Loss
     return alpha*ce_loss + (1-alpha)*kl_loss
+
+def apply_pruning(model, pruning_percentage = 0.2):
+    """
+    Pruning apply for linear and conv2d
+    pruning percentage 20%
+    """
+    #Apply pruning for Linear and Conv2d
+    for name, module in model.named_modules():
+        if isinstance(model, torch.nn.Conv2d):
+            prune.l1_unstructured(module, name = 'weight', amount = pruning_percentage)
+            print(f"Pruning Conv2d layer: {name}")
+        elif isinstance(model, torch.nn.Linear):
+            prune.l1_unstructured(module, name='weight', amount=pruning_percentage)
+            print(f"Pruning Linear layer: {name}")
+    return model
+
+student_model = StudentSCRFD(model_file="student_model.onnx", session = True)
+
+pruned_model = apply_pruning(student_model, pruning_percentage=0.2)
+
+def remove_pruning(model):
+    """
+    Cutting
+    """
+    for name, module in model.named_modules():
+        if isinstance(module, torch.nn.Conv2d):
+            prune.remove(module, 'weight')
+        elif isinstance(module, torch.nn.Linear):
+            prune.remove(module, 'weight')
+    return model
+
+# Giả sử bạn có một bộ dữ liệu (inputs, labels) cho việc huấn luyện lại
+inputs = torch.randn(8, 3, 256, 256)  # ví dụ về batch ảnh
+labels = torch.randint(0, 2, (8,))  # giả sử đây là nhãn cho ảnh
+
+# Sử dụng Optimizer để huấn luyện lại mô hình đã cắt tỉa
+optimizer = torch.optim.Adam(pruned_model.parameters(), lr=0.001)
+
+# Dự đoán từ mô hình pruned
+outputs = pruned_model(inputs)
+
+# Tính toán loss và cập nhật trọng số
+loss = distillation_loss(outputs, teacher_logits, labels)
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+
+# Kiểm tra lại hiệu suất trên bộ dữ liệu kiểm thử
+pruned_model.eval()
+with torch.no_grad():
+    test_inputs = torch.randn(8, 3, 256, 256)
+    test_outputs = pruned_model(test_inputs)
+    # Tính toán độ chính xác hoặc các chỉ số khác
+    accuracy = calculate_accuracy(test_outputs, test_labels)
+    print(f"Accuracy after pruning: {accuracy:.4f}")
+
+
+pruned_model = remove_pruning(pruned_model)
 
 if __name__ == '__main__':
     detector = SCRFD(model_file='../data/models/onnx/scrfd/det_2.5g.onnx')
