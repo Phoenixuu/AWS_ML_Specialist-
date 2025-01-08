@@ -1,0 +1,34 @@
+stages {
+	stage('Clone') {
+		steps {
+			git branch: 'master'
+			url: https://github.com/Phoenixuu/Deploy_continous.git
+		}
+	}
+	stage('Build') {
+		steps {
+		sh '''
+		docker build -t myawesomeapp:${BUILD_NUMBER}
+		'''
+		}
+	}
+	stage('Test') {
+		steps {
+		sh '''
+		docker build -t myawesomeapp:${BUILD_NUMBER}
+		curl localhost:5000
+		'''
+		}
+	}
+	stage('Package') {
+		steps {
+		sh '''
+		docker push myawesomeapp:${BUILD_NUMBER} 
+		'''
+		}
+	}
+	stage('Deploy') {
+		steps {
+		}
+	}
+}
