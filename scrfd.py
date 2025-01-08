@@ -360,7 +360,6 @@ def distillation_loss(student_logits, teacher_logits, true_labels, T = 2.0, alph
     #Intergrate Loss
     return alpha*ce_loss + (1-alpha)*kl_loss
 
-
 if __name__ == '__main__':
     detector = SCRFD(model_file='../data/models/onnx/scrfd/det_2.5g.onnx')
     detector.prepare(-1)
