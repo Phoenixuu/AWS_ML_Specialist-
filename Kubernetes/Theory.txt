@@ -1,0 +1,17 @@
+Kubernetes là một công cụ giúp thuận lợi trong việc cấu hình tự động hóa triển khai các ứng dụng 
+
+Kubernetes giúp tự động sửa lỗi, tự động triển khai dự án, tăng giảm tài nguyên phù hợp
+
+Hiệu quả | Minh bạch | Khả năng vận hành | Tối ưu chi phí
+
+Hạ tầng Kubernetes
+Cluster: tiệm bánh
+Node: phòng ban
+Kubelet: trưởng phòng
+pod: nhân viên
+kube-proxy: giao hàng
+kube-api-server: thư kí 
+etcd: kho, cơ sở dữ liệu phân tán, lưu trữ trạng thái
+controller manager: tiến trình giám sát cluster, tự động triển khai, pod lỗi -> thay mới = đảm bảo công việc 
+scheduler: phân phối pod tới các node. tài nguyên, cpu, ram, đưa nhân sự có chuyên môn vào phòng ban phù hợp
+cloud-control-manager: sếp, cloud provider api
